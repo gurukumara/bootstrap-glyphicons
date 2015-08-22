@@ -1378,8 +1378,10 @@
                 clearTimeout(waitTimer);
                 waitTimer = setTimeout(function(){
                     if($('#search').val().length > 0){
+                        var stxt = $('#search').val().toLowerCase();
+                        $('#search').val(stxt);
                         $("ul.bs-glyphicons-list").find("li").addClass("hidden");     
-                        $("span[class*=" + $("#search").val() + "]").parent('li').removeClass("hidden");
+                        $("span[class*=" + stxt + "]").parent('li').removeClass("hidden");
                     }
                 }, 400);
             });            
